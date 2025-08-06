@@ -4,7 +4,7 @@
 //                       V
 
 export enum LS{
-  APP = 'APP_NAME',
+  APP = 'calibrdots',
   APP_VERSION = 'version',
   APP_THEME = 'theme',
   APP_ROLE = 'role'

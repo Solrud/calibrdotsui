@@ -33,9 +33,9 @@ export class Role {
 //                                            V
 //enum с возможными ролями пользователя, для данного приложения
 export enum UserRoleAuthEnum {
-  ADMIN = 'APP_NAME_ADMIN',
-  USER = 'APP_NAME_USER',
-  VIEW = 'APP_NAME_VIEW'
+  ADMIN = 'calibrdots_ADMIN',
+  USER = 'calibrdots_USER',
+  VIEW = 'calibrdots_VIEW'
 }
 
 //todo снизу изменить нейминг своего ПРОЕКТА -.
