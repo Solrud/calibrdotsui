@@ -1,0 +1,19 @@
+@use 'bootstrap/scss/bootstrap';
+@use 'bootstrap-icons/font/bootstrap-icons';
+
+@use '../public/scss/themes';
+@use '../public/scss/constants' as constant;
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
+
+// Подсветка валидации форм
+.ng-invalid[required], .ng-invalid.required {border-left: 4px solid constant.$ng-invalid-border-color !important;}
+.ng-valid[required], .ng-valid.required {border-left: 4px solid constant.$ng-valid-border-color !important;}
+
+// Курсор руки
+.pointer{cursor: pointer !important;}
+
+// Удаление стрелочки у ddm
+i.dropdown-toggle:after, span.dropdown-toggle:after {display: none;}
+

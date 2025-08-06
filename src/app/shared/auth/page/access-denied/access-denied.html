@@ -1,0 +1,16 @@
+<div class="auth-modal-container border">
+  <div class="modal-header primary-bg d-flex justify-content-center">
+    <h2 class="fs-4 mt-3 font-contrast-color">{{"AUTH.ACCESS-DENIED" | translate}} | {{"APP.NAME" | translate}}</h2>
+  </div>
+  <div class="modal-body d-flex justify-content-center align-items-center flex-column gap-4">
+    <h3 class="code401_warning">{{"AUTH.RESPONSE-DENIED" | translate}}</h3>
+    <span class="code401">403</span>
+  </div>
+  <div class="py-3 main-bg d-flex justify-content-evenly">
+    <a routerLink="" class="routerLink">
+      {{"AUTH.ENTER-AGAIN" | translate}}</a>
+
+    <a href="https://testbazis.avi.motor.loc:3333/user-main" class="routerLink">
+      {{"AUTH.ENTER-PLATFORM" | translate}}</a>
+  </div>
+</div>

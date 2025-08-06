@@ -1,0 +1,46 @@
+// ? Неизменные константы
+
+$width-main-container: 1000px;           // ширина главного контейнера страницы по-середине
+$ng-invalid-border-color: #c9503e;       // цвет границы невалидного инпута
+$ng-valid-border-color: #26de85;         // цвет границы валидного инпута
+
+// ? Константы для тем
+
+// * Константы светлой темы
+$light-primary-color: #244cb6;
+$light-secondary-color: #4c6fcc;
+$light-third-color: #479cbb;
+
+$light-main-bg-color: #ececec;
+$light-font-color: #0c0c0c;
+$light-font-contrast-color: #fdfdfd;
+$light-grey-color: #737373;
+
+$light-white-color: #ffffff;
+$light-black-color: #000000;
+$light-white-soft-color: #ffffff;
+$light-black-soft-color: #1f1f1f;
+
+$light-main-bg: #ececec;
+$light-main-secondary-bg: #f3f3f3;
+$light-scrollbar-bg: #eeee;
+
+
+// * Константы темной темы
+$dark-primary-color: #14317e;
+$dark-secondary-color: #3058c2;
+$dark-third-color: #60ccf3;
+
+$dark-main-bg-color: #2a2d34;
+$dark-font-color: #f6f6f6;
+$dark-font-contrast-color: #000000;
+$dark-grey-color: #b6b6b6;
+
+$dark-white-color: #ffffff;
+$dark-black-color: #0a0a0a;
+$dark-white-soft-color: #ffffff;
+$dark-black-soft-color: #1f1f1f;
+
+$dark-main-bg: #202428;
+$dark-main-secondary-bg: #15161a;
+$dark-scrollbar-bg: rgba(89, 89, 89, 0.93);

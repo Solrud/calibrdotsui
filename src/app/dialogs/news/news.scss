@@ -1,0 +1,14 @@
+.text-title-current-version-config {
+  font-size: 20px;
+}
+
+.text-old-version-config {
+  color: tomato !important;
+}
+.text-new-version-config {
+  color: #09a100 !important;
+}
+.is-first-time-opened{
+  border-top: 2px #c9f8bd solid;
+  background: linear-gradient(0deg, rgba(127,232,97,0) 5%, rgba(147,249,118,0.13769257703081228) 100%);
+}

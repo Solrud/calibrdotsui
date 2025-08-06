@@ -1,0 +1,26 @@
+<div class="modal-header d-flex justify-content-center border-0">
+  <h5 class="modal-title white-permanent-color">{{ "DIALOG.DEV-INFO.DEVS-SOFTWARE" | translate }} "{{ "APP.NAME" | translate }}"</h5>
+</div>
+<div class="modal-body d-flex flex-column ">
+  <span class="text-center fs-6 fw-bold mb-2 ">{{ "DIALOG.DEV-INFO.BUREAU-DEV-OSP-TPP" | translate }}</span>
+  <span class="employee"><i class="bi bi-person-fill"></i> <span class="post">
+    {{ "DIALOG.DEV-INFO.HEAD-OF-OSP-TPP-DEPARTMENT" | translate }}:</span> {{ "DIALOG.DEV-INFO.ER" | translate }} <i class="bi bi-envelope-fill"></i>
+    {{ "DIALOG.DEV-INFO.ER-EMAIL" | translate }} <i class="bi bi-telephone-fill"></i> {{ "DIALOG.DEV-INFO.ER-PHONE" | translate }}</span>
+  <span class="employee"><i class="bi bi-person-fill"></i> <span class="post">
+    {{ "DIALOG.DEV-INFO.HEAD-OF-BUREAU-DEV-PROGRAM" | translate }}:</span> {{ "DIALOG.DEV-INFO.VB" | translate }} <i class="bi bi-envelope-fill"></i>
+    {{ "DIALOG.DEV-INFO.VB-EMAIL" | translate }} <i class="bi bi-telephone-fill"></i> {{ "DIALOG.DEV-INFO.VB-PHONE" | translate }}</span>
+  <span class="employee"><i class="bi bi-person-fill"></i> <span class="post">
+    {{ "DIALOG.DEV-INFO.BEST-OF-DEVELOPER-PROGRAM" | translate }}:</span> {{ "DIALOG.DEV-INFO.MI" | translate }} <i class="bi bi-envelope-fill"></i>
+    {{ "DIALOG.DEV-INFO.MI-EMAIL" | translate }} <i class="bi bi-telephone-fill"></i> {{ "DIALOG.DEV-INFO.MI-PHONE" | translate }}</span>
+  <span class="employee"><i class="bi bi-person-fill"></i> <span class="post">
+    {{ "DIALOG.DEV-INFO.ASSISTANT-DEVELOPER" | translate }}:</span> {{ "DIALOG.DEV-INFO.DV" | translate }} <i class="bi bi-envelope-fill"></i>
+    {{ "DIALOG.DEV-INFO.DV-EMAIL" | translate }} <i class="bi bi-telephone-fill"></i> {{ "DIALOG.DEV-INFO.DV-PHONE" | translate }}</span>
+</div>
+<div class="modal-footer d-flex justify-content-between align-items-end border-0">
+  <span class="footer-rights-text white-permanent-color">{{ "FOOTER.OWNERSHIP" | translate }} {{ date | date: 'yyyy' }}</span>
+  <button type="button"
+          ngbAutofocus
+          class="btn btn-sm btn-primary bg-white text-black"
+          (click)="onClickCancel()"
+  >{{ "DIALOG.BUTTON.CLOSE" | translate}}</button>
+</div>

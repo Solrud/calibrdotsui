@@ -1,0 +1,72 @@
+{
+  "APP": {
+    "NAME": "Архив УП"
+  },
+  "HEADER": {
+    "COMMON": {
+      "CURRENT-ROLE": "Текущая роль"
+    },
+    "BUTTON": {
+      "NEWS": "Новости",
+      "SWITCH-THEME": "Сменить тему",
+      "EXIT": "Выйти",
+      "DEVS": "Разработчики",
+      "SETTINGS": "Настройки",
+      "CHANGE-USER": "Поменять пользователя"
+    }
+  },
+  "FOOTER": {
+    "OWNERSHIP": "Собственность АО \"ОДК-Авиадвигатель\". Все права защищены.",
+    "DEVELOPED": "Разработчик ОСП ТПП"
+  },
+  "AUTH": {
+    "ACCESS-DENIED": "Вход запрещен!",
+    "RESPONSE-DENIED": "У вас нет доступа для входа на данную страницу",
+    "ENTER-PLATFORM": "Войти в платформу",
+    "ENTER-AGAIN": "Попробовать войти заново"
+  },
+  "DIALOG": {
+    "BUTTON": {
+      "CONFIRM": "Подтвердить",
+      "CANCEL": "Отмена",
+      "CLOSE": "Закрыть"
+    },
+    "DEV-INFO": {
+      "DEVS-SOFTWARE": "Разработчики ПО",
+      "BUREAU-DEV-OSP-TPP": "Бюро СПО ОСП ТПП",
+      "HEAD-OF-OSP-TPP-DEPARTMENT": "Начальник отдела ОСП ТПП",
+      "ER": "Ариткулов Эдуард Раисович",
+      "ER-EMAIL": "aritkulov@avid.ru",
+      "ER-PHONE": "31926",
+      "HEAD-OF-BUREAU-DEV-PROGRAM": "Начальник бюро спец. ПО",
+      "VB": "Бочкарев Виталий Николаевич",
+      "VB-EMAIL": "bochkarev@avid.ru",
+      "VB-PHONE": "31948",
+      "BEST-OF-DEVELOPER-PROGRAM": "Техник-программист (Разработчик ПО)",
+      "MI": "Ильин Матвей Игоревич",
+      "MI-EMAIL": "ilin-mi@avid.ru",
+      "MI-PHONE": "31944",
+      "ASSISTANT-DEVELOPER": "Инженер-программист",
+      "DV": "Викулов Денис Владиславович",
+      "DV-EMAIL": "vikulov-dv@avid.ru",
+      "DV-PHONE": "31945"
+    },
+    "SETTINGS": {
+      "TITLE": "Настройки",
+      "LINK": {
+        "SETTINGS": "Настройка сущности"
+      }
+    },
+    "NEWS": {
+      "TITLE": "Новости ПО",
+      "CURRENT-VERSION": "Текущая версия сайта",
+      "LAST-VERSION": "Последняя версия с который вы работали"
+    }
+  },
+  "TOAST": {
+    "ATTENTION": "Внимание!",
+    "SUCCESS": "Успех",
+    "ERROR": "Ошибка",
+    "INFO-FOR-DEVELOPER": "Информация для разработчика."
+  }
+}

@@ -1,0 +1,27 @@
+<div class="modal-header modal-header-config justify-content-center">
+  <h4 class="m-0 text-center white-permanent-color">
+    {{ "DIALOG.SETTINGS.TITLE" | translate }}
+  </h4>
+</div>
+<div class="modal-body d-flex">
+  <nav class="nav-pills flex-column text-nowrap"
+       orientation="vertical"
+       ngbNav
+       #navBar="ngbNav">
+    <ng-container ngbNavItem>
+      <a ngbNavLink>{{"DIALOG.SETTINGS.LINK.SETTINGS" | translate}}</a>
+      <ng-template ngbNavContent>
+        <p>app name: {{ "APP.NAME" | translate }}</p>
+      </ng-template>
+    </ng-container>
+  </nav>
+  <div class="ms-2 p-1 d-flex flex-grow-1 bg-light overflow-auto main-bg border border-dark-subtle"
+       [ngbNavOutlet]="navBar"></div>
+</div>
+<div class="modal-footer modal-footer-config justify-content-end gap-2">
+  <button class="btn btn-sm btn-warning"
+          type="button"
+          ngbAutofocus
+          (click)="onClickCloseModal()"
+  >{{'DIALOG.BUTTON.CLOSE' | translate}}</button>
+</div>

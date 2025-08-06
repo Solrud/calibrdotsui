@@ -1,0 +1,11 @@
+<footer class="primary-bg">
+  <span class="col-4 text-start ps-2 white-permanent-color">
+  {{ "FOOTER.OWNERSHIP" | translate }} {{date | date: 'yyyy'}}</span>
+  <div class="col-4 text-center"
+  ><span class="text-decoration-underline pointer white-permanent-color"
+         (click)="onClickOpenDevInfoDialog()">{{ "FOOTER.DEVELOPED" | translate }}&nbsp;<i class="white-permanent-color bi bi-box-arrow-up-left"></i></span></div>
+  <span class="col-4 text-end pe-2 white-permanent-color">
+  {{ "APP.NAME" | translate }}
+    <img class="align-baseline" [src]="'public/images/avi-logo.png'" alt="No logo" height="16" width="16">&nbsp;
+  </span>
+</footer>

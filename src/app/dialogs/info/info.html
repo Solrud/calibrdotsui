@@ -1,0 +1,16 @@
+<div class="modal-header modal-header-config justify-content-center">
+  <h4 class="m-0 text-center white-permanent-color">{{title}}</h4>
+</div>
+<div class="modal-body modal-body-config ">
+  <span class="fs-5">{{message}}</span>
+</div>
+<div class="modal-footer modal-footer-config justify-content-end gap-2">
+  @if(mode === DialogMode.DELETE){
+    <button class="btn btn-sm btn-danger"
+            (click)="onClickConfirm()">{{'DIALOG.BUTTON.CONFIRM' | translate}}</button>
+  }
+  <button class="btn btn-sm btn-warning"
+          type="button"
+          ngbAutofocus
+          (click)="onClickCloseModal()">{{'DIALOG.BUTTON.CLOSE' | translate}}</button>
+</div>

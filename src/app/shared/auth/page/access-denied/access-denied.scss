@@ -1,0 +1,34 @@
+:host{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.code401{
+  font-size: 80px;
+  font-weight: 600;
+  color: #e74d4d !important;
+  text-align: center;
+}
+.code401_warning{
+  font-size: 20px;
+  font-weight: 600;
+  color: #e74d4d !important;
+  text-align: center;
+}
+
+.auth-modal-container{
+  width: 800px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+.border {
+  border-image: linear-gradient(0deg, rgb(178, 178, 178) 0%, rgb(20, 49, 125) 100%) 1 !important;
+  border-radius: 5px !important; /* this doesn't work */
+  border-width: 4px !important;
+  border-style: solid !important;
+  padding: 6px;
+}

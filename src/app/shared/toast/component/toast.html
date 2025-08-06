@@ -1,0 +1,12 @@
+@for (toast of toastList(); track toast.id) {
+  <ngb-toast
+    [class]="toast.className.toString().replaceAll(',', ' ')"
+    [autohide]="toast.autoHide"
+    [delay]="toast.delay"
+    [header]="toast.title | translate"
+    (hidden)="removeToast(toast)">
+    @if (toast.message.key && toast.message.key.length > 0) {
+      <p>{{toast.message.key}}</p>
+    }
+  </ngb-toast>
+}

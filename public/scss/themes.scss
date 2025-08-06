@@ -1,0 +1,126 @@
+@use './constants' as const;
+
+$light-theme: (
+  primary: const.$light-primary-color,
+  secondary: const.$light-secondary-color,
+  third: const.$light-third-color,
+  font: const.$light-font-color,
+  font-contrast: const.$light-font-contrast-color,
+  scrollbar-bg: const.$light-scrollbar-bg,
+  main-bg: const.$light-main-bg,
+  main-secondary-bg: const.$light-main-secondary-bg,
+);
+
+$dark-theme: (
+  primary: const.$dark-primary-color,
+  secondary: const.$dark-secondary-color,
+  third: const.$dark-third-color,
+  font: const.$dark-font-color,
+  font-contrast: const.$dark-font-contrast-color,
+  scrollbar-bg: const.$dark-scrollbar-bg,
+  main-bg: const.$dark-main-bg,
+  main-secondary-bg: const.$dark-main-secondary-bg,
+);
+
+@mixin theme($theme){
+  $primary-color: map-get($theme, primary);
+  $secondary-color: map-get($theme, secondary);
+  $third-color: map-get($theme, third);
+  $font-color: map-get($theme, font);
+  $font-contrast-color: map-get($theme, font-contrast);
+  $scrollbar-bg-color: map-get($theme, scrollbar-bg);
+  $main-bg-color: map-get($theme, main-bg);
+  $main-secondary-bg-color: map-get($theme, main-secondary-bg);
+
+  $white-permanent-color: #f8f8f8;
+  $black-permanent-color: #090909;
+
+  // * Background
+  .primary-bg{
+    background-color: $primary-color !important;
+  }
+  .main-secondary-bg{
+    background-color: $secondary-color !important;
+  }
+  .third-bg{
+    background-color: $third-color !important;
+  }
+  .main-bg{
+    background-color: $main-bg-color !important;
+  }
+  .main-secondary-bg{
+    background-color: $main-secondary-bg-color !important;
+  }
+  .white-permanent-bg{
+    background-color: $white-permanent-color !important;
+  }
+  .black-permanent-bg{
+    background-color: $black-permanent-color !important;
+  }
+
+  // * Color
+  .primary-color{
+    color: $primary-color !important;
+  }
+  .secondary-color{
+    color: $secondary-color !important;
+  }
+  .third-color{
+    color: $third-color !important;
+  }
+  .white-permanent-color{
+    color: $white-permanent-color !important;
+  }
+  .black-permanent-color{
+    color: $black-permanent-color !important;
+  }
+  .font-color{
+    color: $font-color !important;
+  }
+  .font-contrast-color{
+    color: $font-contrast-color !important;
+  }
+
+  // * Теги глобальные
+  h1, h2, h3, h4, h5, span, p, i, label{
+    color: $font-color !important;
+  }
+  .toast-body p {
+    color: $white-permanent-color !important;
+  }
+
+  // * Селекторы
+  .scrollbar-blue, .overflow-auto { // ? Скроллбар конфиг, добавлять где scroll и overflow: auto
+    /*overflow-y: scroll;*/
+    &::-webkit-scrollbar{
+      width: 10px;
+      height: 11px;
+    }
+    &::-webkit-scrollbar-track{
+      border-radius: 10px;
+      background-color: $scrollbar-bg-color;
+    }
+    &::-webkit-scrollbar-thumb{
+      border-radius: 4px;
+      background: linear-gradient(270deg, #145e8c, #145e8c);
+    }
+  }
+  .modal-header{
+    background-color: $primary-color !important;
+  }
+  .modal-body{
+    background-color: $main-bg-color !important;
+  }
+  .modal-footer{
+    background-color: $primary-color !important;
+  }
+}
+
+
+.light-theme{
+  @include theme($light-theme);
+}
+
+.dark-theme{
+  @include theme($dark-theme);
+}
