@@ -24,7 +24,7 @@ export class ToastS {
   }
 
   showPositive(text: ToastTextC) {
-    this.toastList.push(new ToastC("", text, ["bg-success"], true, 5000));
+    this.toastList.push(new ToastC("", text, ["bg-primary"], true, 5000));
     this.distributeToastList();
   }
   showPositiveFixed(text: ToastTextC, textTitle: string | null = null) {

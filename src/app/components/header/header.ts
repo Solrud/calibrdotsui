@@ -32,7 +32,7 @@ export class Header implements OnInit, OnDestroy {
   readonly showNewsAttention = signal<boolean>(true);
   readonly currentAppRoleList = signal<Role[] | null>(null);
 
-  defaultVersion = DEFAULT_APP_VERSION;
+  readonly defaultVersion = DEFAULT_APP_VERSION;
 
   private readonly event = inject(Event);
   private readonly theme = inject(ThemeService);

@@ -1,3 +1,9 @@
-<body class="main-bg w-100 h-100">
+<body class="main-container main-bg">
+  <app-calculate
+    (allDataForView)="onGetAllData($event)"></app-calculate>
 
+    @for (radius of allData()?.calibrationPointsRadiusList; track radius.id) {
+      <br><span>{{ radius.name }} {{ radius.value }}</span>
+    }
 </body>
+

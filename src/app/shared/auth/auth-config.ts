@@ -28,9 +28,7 @@ export class Role {
     this.description = description;
   }
 }
-//todo снизу изменить нейминг своего ПРОЕКТА -.
-//            ENUM <APP-NAME>                 |
-//                                            V
+
 //enum с возможными ролями пользователя, для данного приложения
 export enum UserRoleAuthEnum {
   ADMIN = 'calibrdots_ADMIN',
@@ -38,9 +36,6 @@ export enum UserRoleAuthEnum {
   VIEW = 'calibrdots_VIEW'
 }
 
-//todo снизу изменить нейминг своего ПРОЕКТА -.
-//            NAME ENUM <APP-NAME>            |
-//                                            V
 //стандартная инициализация роли
 export const ROLE_UNDEFINED = new Role(99999, 'NONE_ROLE', 'Роль не найдена у пользователя');
 //инициализация пользователя, если выключена авторизация

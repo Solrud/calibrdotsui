@@ -1,0 +1,27 @@
+import {IBase} from '../IBase';
+
+export class DataForCalc implements IBase{
+  stepValue: number = 0;
+  widthOfBladeSlot: number = 0;
+  minWidthOfBladeShank: number = 0;
+  maxWidthOfBladeShank: number = 0;
+  maxHeightOfWorkingBladeAtLeadingEdge: number = 0;
+  minHeightOfWorkingBladeAtLeadingEdge: number = 0;
+  maxHeightOfWorkingBladeAtTrailingEdge: number = 0;
+  minHeightOfWorkingBladeAtTrailingEdge: number = 0;
+  a: number = 22.5;
+}
+
+
+//toDo => a: number = 22.5;
+// export class MathValueA extends AConstValue {
+// }
+
+// для справки:
+// ширина лопаточного паза диска - widthOfBladeSlot
+// наименьшая ширина хвостовика лопатки - minWidthOfBladeShank
+// наибольшая ширина хвостовика лопатки - maxWidthOfBladeShank
+// наибольшая высота рабочей лопатки по входной кромке - maxHeightOfWorkingBladeAtLeadingEdge
+// наименьшая высота рабочей лопатки по входной кромке - minHeightOfWorkingBladeAtLeadingEdge
+// наибольшая высота рабочей лопатки по выходной кромке - maxHeightOfWorkingBladeAtTrailingEdge
+// наименьшая высота рабочей лопатки по выходной кромке - minHeightOfWorkingBladeAtTrailingEdge

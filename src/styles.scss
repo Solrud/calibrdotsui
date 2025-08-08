@@ -17,3 +17,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;}
 // Удаление стрелочки у ddm
 i.dropdown-toggle:after, span.dropdown-toggle:after {display: none;}
 
+// Главный контейнер посередине страницы
+.main-container{
+  margin: 0 auto !important;
+  width: 100% !important;
+  max-width: constant.$width-main-container !important;
+}
+
+// Убирание стрелочек в input type=number
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none; /* Убираем стрелочки в Chrome, Safari, Edge */
+  margin: 0; /* Убираем отступы */
+  -moz-appearance: textfield; /* Убираем стрелочки в Firefox */
+}

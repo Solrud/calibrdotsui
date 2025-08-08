@@ -145,10 +145,10 @@
           },
           "configurations": {
             "production": {
-              "buildTarget": "app_name:build:production"
+              "buildTarget": ":calibrdots:build:production"
             },
             "development": {
-              "buildTarget": "app_name:build:development"
+              "buildTarget": "calibrdots:build:development"
             }
           },
           "defaultConfiguration": "development"
