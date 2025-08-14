@@ -4,10 +4,10 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build --configuration bazis2 --base-href=/pmzbladepicker/",
-    "build-auth": "ng build --configuration bazis2-auth --base-href=/pmzbladepicker/",
-    "build-test": "ng build --configuration testbazis --base-href=/pmzbladepicker/",
-    "build-test-auth": "ng build --configuration testbazis-auth --base-href=/pmzbladepicker/",
+    "build": "ng build --configuration bazis2 --base-href=/calibrdots/",
+    "build-auth": "ng build --configuration bazis2-auth --base-href=/calibrdots/",
+    "build-test": "ng build --configuration testbazis --base-href=/calibrdots/",
+    "build-test-auth": "ng build --configuration testbazis-auth --base-href=/calibrdots/",
     "t-update": "ngx-translate-extract --input ./src --output public/i18n/ru.json public/i18n/en.json --sort --format namespaced-json",
     "test": "ng test"
   },
@@ -35,7 +35,8 @@
     "bootstrap": "^5.3.7",
     "bootstrap-icons": "^1.13.1",
     "rxjs": "~7.8.0",
-    "tslib": "^2.3.0"
+    "tslib": "^2.3.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@angular/build": "^20.1.0",

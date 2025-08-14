@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, inject, OnDestroy, OnInit, signal} from '@angular/core';
-import {NgbDropdown, NgbDropdownItem, NgbDropdownMenu, NgbDropdownToggle} from '@ng-bootstrap/ng-bootstrap';
+import {NgbTooltip} from '@ng-bootstrap/ng-bootstrap';
 import {TranslatePipe} from '@ngx-translate/core';
 import {Theme} from '../../shared/theme/theme.enum';
 import {Role, ROLE_UNDEFINED, User, USER_UNDEFINED} from '../../shared/auth/auth-config';
@@ -9,19 +9,19 @@ import {ThemeService} from '../../shared/theme/theme.service';
 import {OpenDialog} from '../../shared/open-dialog/open-dialog';
 import {DEFAULT_APP_VERSION} from '../../dialogs/news/news.config';
 import {NgTemplateOutlet} from '@angular/common';
+import {File} from '../../shared/file/file';
+import {environment} from '../../../environments/environment';
 
 @Component({
   selector: 'app-header',
   imports: [
-    NgbDropdown,
-    NgbDropdownMenu,
-    NgbDropdownToggle,
     TranslatePipe,
-    NgbDropdownItem,
-    NgTemplateOutlet
+    NgTemplateOutlet,
+    NgbTooltip
   ],
   templateUrl: './header.html',
   styleUrl: './header.scss',
+  host: {class: 'primary-bg'},
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class Header implements OnInit, OnDestroy {
@@ -37,6 +37,7 @@ export class Header implements OnInit, OnDestroy {
   private readonly event = inject(Event);
   private readonly theme = inject(ThemeService);
   private readonly openDialog = inject(OpenDialog);
+  private readonly file = inject(File);
 
   protected readonly Theme = Theme;
 
@@ -146,6 +147,10 @@ export class Header implements OnInit, OnDestroy {
   // Смена пользователя / Выход из ПО
   onClickChangeUserOrLogout() {
     this.event.logout();
+  }
+
+  onClickOpenInstruction(): void {
+    this.file.openFileInNewTab(environment.frontendURL + '/public/files/instructionCalibrDots.pdf', 'instructionCalibrDots')
   }
 
 

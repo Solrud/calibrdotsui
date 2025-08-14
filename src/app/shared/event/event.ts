@@ -59,16 +59,4 @@ export class Event {
   getAppVersion(){
     return this.currentAppVersion$.asObservable();
   }
-
-  //! Показывать/Скрыть спиннер
-  private spinnerVisibility$ = new BehaviorSubject(false);
-  showSpinner$(): void {
-    this.spinnerVisibility$.next(true);
-  }
-  hideSpinner(): void {
-    this.spinnerVisibility$.next(false);
-  }
-  getSpinnerStatus() {
-    return this.spinnerVisibility$.asObservable();
-  }
 }

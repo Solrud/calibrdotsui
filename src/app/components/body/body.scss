@@ -2,3 +2,20 @@
   display: flex;
   flex-grow: 1;
 }
+.small-text{
+  font-size: 13px;
+}
+.measurement-container{
+  display: flex;
+  justify-content: space-between;
+}
+.label{
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 150px;
+}
+
+.text{
+  flex-grow: 1;
+  flex-shrink: 0;
+}

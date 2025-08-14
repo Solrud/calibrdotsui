@@ -3,14 +3,14 @@
     <div class="d-flex flex-grow-1 gap-5 mt-3 mb-3">
       <div class="col-my flex-column">
         <label for="step"
-               class="form-label">Ступень</label>
+               class="form-label">{{ "CALC.STEP" | translate }}</label>
         <div class="input-group">
           <select class="form-select border border-primary"
                   id="step"
                   formControlName="step"
                   [required]="fcFieldIsRequired('step')">
             @for (step of getStepValueList(); track step.id){
-              <option value="{{ step.value }}">{{ step.name }}</option>
+              <option value="{{ step.value }}">{{ step.name }}  = {{ step.value }} мм. </option>
             }
           </select>
           <button class="btn btn-outline-primary"
@@ -22,7 +22,7 @@
       </div>
       <div class="col-my flex-column">
         <label for="widthOfBladeSlot"
-               class="form-label">Ширина лопаточного паза диска</label>
+               class="form-label">{{ "CALC.WIDTH-OF-BLADE-SLOT" | translate }}</label>
         <div class="input-group">
           <input type="number"
                  class="form-control border border-primary"
@@ -41,7 +41,7 @@
     <div class="d-flex flex-grow-1 gap-5 mb-3">
       <div class="col-my flex-column">
         <label for="minWidthOfBladeShank"
-               class="form-label">Наименьшая ширина хвостовика лопатки</label>
+               class="form-label">{{ "CALC.MIN-WIDTH-OF-BLADE-SHANK" | translate }}</label>
         <div class="input-group">
           <input type="number"
                  class="form-control border border-primary"
@@ -58,7 +58,7 @@
       </div>
       <div class="col-my flex-column">
         <label for="maxWidthOfBladeShank"
-               class="form-label">Наибольшая ширина хвостовика лопатки</label>
+               class="form-label">{{ "CALC.MAX-WIDTH-OF-BLADE-SHANK" | translate }}</label>
         <div class="input-group">
           <input type="number"
                  class="form-control border border-primary"
@@ -77,7 +77,7 @@
     <div class="d-flex flex-grow-1 gap-5 mb-3">
       <div class="col-my flex-column">
         <label for="maxHeightOfWorkingBladeAtLeadingEdge"
-               class="form-label">Наибольшая высота рабочей лопатки по входной кромке</label>
+               class="form-label">{{ "CALC.MAX-HEIGHT-OF-WORKING-BLADE-AT-LEADING-EDGE" | translate }}</label>
         <div class="input-group">
           <input type="number"
                  class="form-control border border-primary"
@@ -94,7 +94,7 @@
       </div>
       <div class="col-my flex-column">
         <label for="minHeightOfWorkingBladeAtLeadingEdge"
-               class="form-label">Наименьшая высота рабочей лопатки по входной кромке</label>
+               class="form-label">{{ "CALC.MIN-HEIGHT-OF-WORKING-BLADE-AT-LEADING-EDGE" | translate }}</label>
         <div class="input-group">
           <input type="number"
                  class="form-control border border-primary"
@@ -113,7 +113,7 @@
     <div class="d-flex flex-grow-1 gap-5 mb-3">
       <div class="col-my flex-column">
         <label for="maxHeightOfWorkingBladeAtTrailingEdge"
-               class="form-label">Наибольшая высота рабочей лопатки по выходной кромке</label>
+               class="form-label">{{ "CALC.MAX-HEIGHT-OF-WORKING-BLADE-AT-TRAILING-EDGE" | translate }}</label>
         <div class="input-group">
           <input type="number"
                  class="form-control border border-primary"
@@ -130,7 +130,7 @@
       </div>
       <div class="col-my flex-column">
         <label for="minHeightOfWorkingBladeAtTrailingEdge"
-               class="form-label">Наименьшая высота рабочей лопатки по выходной кромке</label>
+               class="form-label">{{ "CALC.MIN-HEIGHT-OF-WORKING-BLADE-AT-TRAILING-EDGE" | translate }}</label>
         <div class="input-group">
           <input type="number"
                  class="form-control border border-primary"
@@ -149,6 +149,6 @@
 
     <button class="btn btn-primary w-auto"
             [disabled]="fgCalc.invalid"
-            (click)="onClickCalc()">Произвести расчёт</button>
+            (click)="onClickCalc()">{{ "CALC.BUTTONS.CALCULATE" | translate }}</button>
   </form>
 }

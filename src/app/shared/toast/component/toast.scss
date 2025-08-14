@@ -1,10 +1,10 @@
 :host {
   position: fixed;
-  padding: 1rem;
+  padding: 0 1rem 1rem 1rem;
   pointer-events: none;
   max-width: 100%;
   width: max-content;
-  top: 5%;
+  top: 0;
   right: 0;
   z-index: 1201;
 }

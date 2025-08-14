@@ -1,4 +1,13 @@
-import {ChangeDetectionStrategy, Component, inject, OnDestroy, OnInit, signal} from '@angular/core';
+import {
+  AfterViewInit,
+  ChangeDetectionStrategy,
+  Component,
+  ElementRef,
+  inject,
+  OnDestroy,
+  OnInit,
+  signal
+} from '@angular/core';
 import {ToastC} from '../config/toast.class';
 import {Subscription} from 'rxjs';
 import {ToastS} from '../service/toast-s.service';
@@ -15,11 +24,12 @@ import {TranslatePipe} from '@ngx-translate/core';
   styleUrl: './toast.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class Toast implements OnInit, OnDestroy{
+export class Toast implements OnInit, OnDestroy, AfterViewInit{
   protected readonly toastList = signal<ToastC[]>([]);
   private toastHook: Subscription | undefined;
 
   private readonly toastS = inject(ToastS);
+  private readonly elementRef = inject(ElementRef);
 
   ngOnInit() {
     this.initSubscribe();
@@ -35,6 +45,14 @@ export class Toast implements OnInit, OnDestroy{
   }
   removeToast(toast: ToastC): void {
     this.toastS.remove(toast);
+  }
+
+  ngAfterViewInit() {
+    const headerElem = document.querySelector('app-header');
+    if (headerElem) {
+      const headerHeight = headerElem.clientHeight;
+      this.elementRef.nativeElement.style.top = (5 + headerHeight) + 'px';
+    }
   }
 
   ngOnDestroy() {

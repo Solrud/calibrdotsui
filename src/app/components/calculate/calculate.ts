@@ -7,11 +7,13 @@ import {DataForCalc} from '../../shared/data/model/implementations/data-for-calc
 import {Calc} from '../../shared/data/service/calc/calc';
 import {ToastTextC} from '../../shared/toast/config/toast.class';
 import {AllCalculatedData} from '../../shared/data/model/implementations/for-xlsx/all-calculated-data';
+import {TranslatePipe} from '@ngx-translate/core';
 
 @Component({
   selector: 'app-calculate',
   imports: [
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    TranslatePipe
   ],
   templateUrl: './calculate.html',
   styleUrl: './calculate.scss',

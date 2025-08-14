@@ -8,13 +8,21 @@ header{
   font-size: 12px;
 }
 .news-attention-config {
-  position: absolute;
-  top: 3% !important;
-  right: 3% !important;
+  position: relative;
+  top: -12px !important;
+  right: 13% !important;
 }
 button{
   padding: 0 0.5rem !important;
 }
 button:hover{
   background: #acacac;
+}
+i{
+  cursor: pointer;
+  color: #f1f1f1 !important;
+
+  &:hover{
+    color: #d2fdf0 !important;
+  }
 }

@@ -12,11 +12,6 @@ export class DataForCalc implements IBase{
   a: number = 22.5;
 }
 
-
-//toDo => a: number = 22.5;
-// export class MathValueA extends AConstValue {
-// }
-
 // для справки:
 // ширина лопаточного паза диска - widthOfBladeSlot
 // наименьшая ширина хвостовика лопатки - minWidthOfBladeShank

@@ -89,6 +89,23 @@ $dark-theme: (
     color: $white-permanent-color !important;
   }
 
+  // * Изменение form-control инпутов, селектов
+  .form-control{
+    background-color: $main-secondary-bg-color !important;
+    color: $font-color !important;
+  }
+  .form-control[disabled]{
+    background-color: $main-bg-color !important;
+    /*color: var(--black-color) !important;*/
+  }
+  .form-select{
+    background-color: $main-secondary-bg-color !important;
+    color: $font-color !important;
+  }
+  .form-select[disabled]{
+    background-color: $main-bg-color !important;
+  }
+
   // * Селекторы
   .scrollbar-blue, .overflow-auto { // ? Скроллбар конфиг, добавлять где scroll и overflow: auto
     /*overflow-y: scroll;*/
@@ -109,7 +126,7 @@ $dark-theme: (
     background-color: $primary-color !important;
   }
   .modal-body{
-    background-color: $main-bg-color !important;
+    background-color: $main-secondary-bg-color !important;
   }
   .modal-footer{
     background-color: $primary-color !important;

@@ -1,6 +1,12 @@
 {
   "APP": {
-    "NAME": "Расчет радиусов калибровых точек лопаток ТВД"
+    "NAME": "Расчет радиусов калибровых точек лопаток КВД"
+  },
+  "HINT": {
+    "DEV-NEWS": "Новости разработки",
+    "DEVELOPERS-INFO": "Информация о разработчиках",
+    "INSTRUCTION": "Инструкция по работе с ПО",
+    "TOGGLE-THEME": "Переключение темы ПО"
   },
   "HEADER": {
     "COMMON": {
@@ -59,7 +65,7 @@
     },
     "NEWS": {
       "TITLE": "Новости ПО",
-      "CURRENT-VERSION": "Текущая версия сайта",
+      "CURRENT-VERSION": "Текущая версия ПО",
       "LAST-VERSION": "Последняя версия с который вы работали"
     }
   },
@@ -68,5 +74,28 @@
     "SUCCESS": "Успех",
     "ERROR": "Ошибка",
     "INFO-FOR-DEVELOPER": "Информация для разработчика."
+  },
+  "CALC": {
+    "STEP": "Ступень",
+    "WIDTH-OF-BLADE-SLOT": "Ширина лопаточного паза диска",
+    "MIN-WIDTH-OF-BLADE-SHANK": "Наименьшая ширина хвостовика лопатки",
+    "MAX-WIDTH-OF-BLADE-SHANK": "Наибольшая ширина хвостовика лопатки",
+    "MAX-HEIGHT-OF-WORKING-BLADE-AT-LEADING-EDGE": "Наибольшая высота рабочей лопатки по входной кромке",
+    "MIN-HEIGHT-OF-WORKING-BLADE-AT-LEADING-EDGE": "Наименьшая высота рабочей лопатки по входной кромке",
+    "MAX-HEIGHT-OF-WORKING-BLADE-AT-TRAILING-EDGE": "Наибольшая высота рабочей лопатки по выходной кромке",
+    "MIN-HEIGHT-OF-WORKING-BLADE-AT-TRAILING-EDGE": "Наименьшая высота рабочей лопатки по выходной кромке",
+    "BUTTONS": {
+      "CALCULATE": "Произвести расчёт"
+    },
+    "RESULTS": {
+      "RESULTS-MAX-MIN-RADIUS": "Результат max, min радиуса калибровых точек по торцам лопаток ротора КВД",
+      "MAX-IN": "max вх.",
+      "MIN-IN": "min вх.",
+      "MAX-OUT": "max вых.",
+      "MIN-OUT": "max вых.",
+      "BUTTONS": {
+        "SAVE-XLSX-RESULTS": "Сохранить результат в файл .xlsx"
+      }
+    }
   }
 }

@@ -1,82 +1,79 @@
-<header class="primary-bg">
-  <div class="d-flex col-4 px-1"></div>
-  <div class="d-flex col-4 px-1 justify-content-center align-items-center">
-    <h1 class="my-3 fs-4 white-permanent-color">{{'APP.NAME' | translate}}</h1>
-    <h4 class="version white-permanent-color ms-1">{{ defaultVersion }}</h4>
+<div class="col-3"></div>
+<div class="col d-flex  justify-content-center align-items-center">
+  <h4 class="mt-2 white-permanent-color">{{ 'APP.NAME' | translate }}</h4>
+  <h4 class="white-permanent-color version ms-2">{{ defaultVersion }}</h4>
+</div>
+<div class="col-3 d-flex justify-content-end">
+  <div class="me-4 d-flex align-items-center">
+    <i class="fs-4 bi bi-newspaper text-white cursor-pointer"
+       ngbTooltip="{{ 'HINT.DEV-NEWS' | translate }}"
+       (click)="onClickOpenNewsDialog()">
+      @if(showNewsAttention()){
+        <ng-template [ngTemplateOutlet]="attentionBell"></ng-template>
+      }
+    </i>
   </div>
-  <div class="d-flex col-4 justify-content-end align-items-center">
-    <div class="d-inline-block" ngbDropdown>
-      <span class="fs-6 text-capitalize fio-header header-items-hover white-permanent-color" type="button" ngbDropdownToggle >
-        <i class="bi bi-person-square white-permanent-color"></i>
-        {{currentUser().firstName.toLowerCase()}} {{currentUser().lastName.toLowerCase()}}
-      </span>
-      <div class="p-2 main-secondary-bg" ngbDropdownMenu>
-        <div class="mb-2 p-0 text-center ">
-          <label class="pb-1 font-color" for="roleSelect">{{'HEADER.COMMON.CURRENT-ROLE' | translate}} :</label>
-          <select class="form-select form-select-sm pointer text-capitalize main-bg font-color"
-                  id="roleSelect"
-                  (change)="onClickSelectRole($event)">
-            @for (role of currentAppRoleList(); track role.id) {
-              <option [selected]="role == currentRole()"
-                      value="{{role.name}}">{{getRoleViewName(role)}}</option>
-            }
-          </select>
-        </div>
-        <button class="btn p-0 font-color"
-                type="button"
-                ngbDropdownItem
-                (click)="onClickChangeUserOrLogout()">
-          <i class="bi bi-box-arrow-right"></i> {{'HEADER.BUTTON.CHANGE-USER' | translate}}</button>
-      </div>
-    </div>
-    <div class="d-inline-block px-2"
-         ngbDropdown>
-      <i class="bi bi-gear fs-4 hover-header-config header-items-hover white-permanent-color"
-         type="button"
-         ngbDropdownToggle>
-        @if (showNewsAttention()){
-          <ng-template [ngTemplateOutlet]="attentionBell"></ng-template>
-        }
-      </i>
-      <div class="main-secondary-bg"
-           ngbDropdownMenu>
-        <button class="btn mb-2 p-0 font-color"
-                type="button"
-                ngbDropdownItem
-                (click)="onClickOpenNewsDialog()">
-          <i class="bi bi-newspaper">
-            @if (showNewsAttention()){
-              <ng-template [ngTemplateOutlet]="attentionBell"></ng-template>
-            }
-          </i> {{'HEADER.BUTTON.NEWS' | translate}}</button>
-        <button class="btn mb-2 p-0 font-color"
-                type="button"
-                ngbDropdownItem
-                (click)="onClickOpenDevelopersInfoDialog()">
-          <i class="bi bi-person-lines-fill"></i> {{'HEADER.BUTTON.DEVS' | translate}}</button>
-        <button class="btn mb-2 p-0 font-color"
-                type="button"
-                ngbDropdownItem
-                (click)="onClickToggleTheme()">
-          <i class="bi bi-brush"></i> {{'HEADER.BUTTON.SWITCH-THEME' | translate}}</button>
-        <button class="btn mb-2 p-0 font-color"
-                type="button"
-                ngbDropdownItem
-                (click)="onClickSettings()">
-          <i class="bi bi-gear-wide-connected"></i> {{'HEADER.BUTTON.SETTINGS' | translate}}</button>
-        <button class="btn p-0 font-color"
-                type="button"
-                ngbDropdownItem
-                (click)="onClickChangeUserOrLogout()">
-          <i class="bi bi-box-arrow-right"></i> {{'HEADER.BUTTON.EXIT' | translate}}</button>
-      </div>
-    </div>
+  <div class="me-4 d-flex align-items-center">
+    <i class="fs-3 bi bi-person-lines-fill text-white cursor-pointer"
+       ngbTooltip="{{'HINT.DEVELOPERS-INFO' | translate }}"
+       (click)="onClickOpenDevelopersInfoDialog()"></i>
   </div>
-</header>
+  <div class="me-4 d-flex align-items-center">
+    <i class="fs-4 bi bi-filetype-pdf text-white cursor-pointer"
+       ngbTooltip="{{'HINT.INSTRUCTION'|translate }}"
+       (click)="onClickOpenInstruction()"></i>
+  </div>
+  <div class="me-5 d-flex align-items-center">
+    <i class="fs-4 bi text-white cursor-pointer"
+       ngbTooltip="{{'HINT.TOGGLE-THEME'|translate }}"
+       placement="bottom"
+       [class.bi-brightness-high-fill]="currentTheme() == Theme.LIGHT"
+       [class.bi-moon-fill]="currentTheme() == Theme.DARK"
+       (click)="onClickToggleTheme()"></i>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <ng-template #attentionBell>
   <img class="news-attention-config"
-       [src]="'../public/images/attention-fill.gif'" [alt]="'attention bell'"
+       [src]="'public/images/attention-fill.gif'" [alt]="'attention bell'"
        height="16" width="16">
 </ng-template>

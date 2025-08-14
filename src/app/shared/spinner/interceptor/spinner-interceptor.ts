@@ -1,14 +1,14 @@
 import { HttpInterceptorFn } from '@angular/common/http';
-import {Event} from '../../event/event';
 import {inject} from '@angular/core';
 import {finalize} from 'rxjs';
+import {SpinnerService} from '../service/spinner-service';
 
 export const spinnerInterceptor: HttpInterceptorFn = (req, next) => {
   let activeRequestCount: number = 0;
-  const eventService = inject(Event);
+  const spinnerService = inject(SpinnerService);
 
   if (activeRequestCount === 0)
-    eventService.showSpinner$();
+    spinnerService.showSpinner$();
 
   activeRequestCount++;
 
@@ -17,6 +17,6 @@ export const spinnerInterceptor: HttpInterceptorFn = (req, next) => {
       finalize(() => {
         activeRequestCount--;
         if(activeRequestCount === 0)
-          eventService.hideSpinner();
+          spinnerService.hideSpinner();
       }));
 };
