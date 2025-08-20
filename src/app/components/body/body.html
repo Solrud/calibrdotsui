@@ -14,14 +14,17 @@
           <span class="label fs-2 fw-bold">R <span class="fs-5">{{ 'CALC.RESULTS.MIN-IN' | translate }}</span></span>
           <span class="text fs-2 fw-bold">{{ getValueRadiusFromList(1) }}</span>
         </div>
-        <div class="measurement-container">
-          <span class="label fs-2 fw-bold">R <span class="fs-5">{{ 'CALC.RESULTS.MAX-OUT' | translate }}</span></span>
-          <span class="text fs-2 fw-bold">{{ getValueRadiusFromList(2) }}</span>
-        </div>
-        <div class="measurement-container">
-          <span class="label fs-2 fw-bold">R <span class="fs-5">{{ 'CALC.RESULTS.MIN-OUT' | translate }}</span></span>
-          <span class="text fs-2 fw-bold">{{ getValueRadiusFromList(3) }}</span>
-        </div>
+
+        @if (allData()?.dataForCalc?.stepValue?.name !== '8 ступень'){
+          <div class="measurement-container">
+            <span class="label fs-2 fw-bold">R <span class="fs-5">{{ 'CALC.RESULTS.MAX-OUT' | translate }}</span></span>
+            <span class="text fs-2 fw-bold">{{ getValueRadiusFromList(2) }}</span>
+          </div>
+          <div class="measurement-container">
+            <span class="label fs-2 fw-bold">R <span class="fs-5">{{ 'CALC.RESULTS.MIN-OUT' | translate }}</span></span>
+            <span class="text fs-2 fw-bold">{{ getValueRadiusFromList(3) }}</span>
+          </div>
+        }
         <button class="btn btn-success mt-3" (click)="onClickExportExcelResults()">
           <i class="white-permanent-color bi bi-download"></i> {{ 'CALC.RESULTS.BUTTONS.SAVE-XLSX-RESULTS' | translate }}</button>
       </div>

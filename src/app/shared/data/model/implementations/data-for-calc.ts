@@ -1,7 +1,8 @@
 import {IBase} from '../IBase';
+import {StepValue} from './step-value';
 
 export class DataForCalc implements IBase{
-  stepValue: number = 0;
+  stepValue: StepValue | null = null;
   widthOfBladeSlot: number = 0;
   minWidthOfBladeShank: number = 0;
   maxWidthOfBladeShank: number = 0;

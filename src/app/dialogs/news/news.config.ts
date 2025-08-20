@@ -10,4 +10,4 @@ export class TheNews {
   }
 }
 
-export const DEFAULT_APP_VERSION = 'v.1.0.0';
+export const DEFAULT_APP_VERSION = 'v.1.1.0';

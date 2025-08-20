@@ -16,26 +16,33 @@ export class Excel {
     if (!dataForCalc) return;
     if (!calibrRadiusList) return;
 
+    const step = allCalcData?.dataForCalc?.stepValue;
+
     const data = [
       ['Параметр', 'Значение', 'Ед. измерения'],
       ['Входные данные:', '', ''],
+      [step?.name, '', ''],
       ['Ширина лопаточного паза диска', dataForCalc?.widthOfBladeSlot, 'мм.'],
       ['Наименьшая ширина хвостовика лопатки', dataForCalc?.minWidthOfBladeShank, 'мм.'],
       ['Наибольшая ширина хвостовика лопатки', dataForCalc?.maxWidthOfBladeShank, 'мм.'],
       ['Наибольшая высота рабочей лопатки по входной кромке', dataForCalc?.maxHeightOfWorkingBladeAtLeadingEdge, 'мм.'],
       ['Наименьшая высота рабочей лопатки по входной кромке', dataForCalc?.minHeightOfWorkingBladeAtLeadingEdge, 'мм.'],
-      ['Наибольшая высота рабочей лопатки по выходной кромке', dataForCalc?.maxHeightOfWorkingBladeAtTrailingEdge, 'мм.'],
-      ['Наименьшая высота рабочей лопатки по выходной кромке', dataForCalc?.minHeightOfWorkingBladeAtTrailingEdge, 'мм.'],
-      //todo градусы или радианы?
-      ['Половина угла лопаточного паза диска (a)', dataForCalc.a, 'градусы/радианы?'],
-      ['Радиус расположения паспортной ширины лопаточного паза диска (R)', dataForCalc.stepValue, 'мм.'],
+      ['Половина угла лопаточного паза диска (a)', dataForCalc.a, 'градусы'],
+      ['Радиус расположения паспортной ширины лопаточного паза диска (R)', dataForCalc.stepValue?.value, 'мм.'],
       ['', '', ''],
       ['Результаты расчетов:', '', ''],
       ['R max вх.', calibrRadiusList[0].value, 'мм.'],
       ['R min вх.', calibrRadiusList[1].value, 'мм.'],
-      ['R max вых.', calibrRadiusList[2].value, 'мм.'],
-      ['R min вых.', calibrRadiusList[3].value, 'мм.'],
     ]
+
+    if (step?.name !== "8 ступень") {
+      data.splice(8, 0, ['Наибольшая высота рабочей лопатки по выходной кромке', dataForCalc?.maxHeightOfWorkingBladeAtTrailingEdge, 'мм.'],
+        ['Наименьшая высота рабочей лопатки по выходной кромке', dataForCalc?.minHeightOfWorkingBladeAtTrailingEdge, 'мм.'],)
+      data.push(
+        ['R max вых.', calibrRadiusList[2].value, 'мм.'],
+        ['R min вых.', calibrRadiusList[3].value, 'мм.'],
+      )
+    }
 
     // Создание рабочей книги и листа
     const worksheet = XLSX.utils.aoa_to_sheet(data);
@@ -61,7 +68,7 @@ export class Excel {
     const seconds = String(date.getSeconds()).padStart(2, '0');
 
     // Выгрузка файла
-    XLSX.writeFile(workbook, `Результат расчета радиусов калибровых точек по торцам рабочих лопаток ротора КВД` +
-      ` ${day}.${month}.${year} ${hours}-${minutes}-${seconds}.xlsx`);
+    XLSX.writeFile(workbook, `Результат расчета радиусов калибровых точек по торцам рабочих лопаток ротора КВД ` +
+    `(${step?.name}) ${day}.${month}.${year} ${hours}-${minutes}-${seconds}.xlsx`);
   }
 }

@@ -25,7 +25,7 @@ export class Calculate implements OnInit{
   private readonly calc = inject(Calc);
 
   fgCalc: FormGroup | null = null;
-  selectedStepValue: number = 0;
+  selectedStep: StepValue | null = null;
   newDataForCalc: DataForCalc | null = null
 
   readonly allDataForView = output<AllCalculatedData | null>();
@@ -62,9 +62,18 @@ export class Calculate implements OnInit{
   _observeFcStep(): void {
     this.fgCalc?.get('step')?.valueChanges
       .subscribe({
-        next: (value)=> {
+        next: (stepName)=> {
+          if (stepName === "8 ступень") {
+            this.fgCalc?.get('maxHeightOfWorkingBladeAtTrailingEdge')?.disable();
+            this.fgCalc?.get('minHeightOfWorkingBladeAtTrailingEdge')?.disable();
+          } else {
+            this.fgCalc?.get('maxHeightOfWorkingBladeAtTrailingEdge')?.enable();
+            this.fgCalc?.get('minHeightOfWorkingBladeAtTrailingEdge')?.enable();
+          }
           this.toClearAllData();
-          this.selectedStepValue = value;
+
+          const stepCurrent: StepValue | null = this.getStepValueList()?.find( step => step.name == stepName) || null;
+          this.selectedStep = stepCurrent;
         }
       });
   }
@@ -88,14 +97,13 @@ export class Calculate implements OnInit{
   }
 
   toClearAllData(): void {
-    this.selectedStepValue = 0;
     this.newDataForCalc = null;
     this.allDataForView.emit(null);
   }
 
   createNewDataForCalc(): void {
     this.newDataForCalc = new DataForCalc();
-    this.newDataForCalc.stepValue = this.selectedStepValue;
+    this.newDataForCalc.stepValue = this.selectedStep;
     this.newDataForCalc.widthOfBladeSlot = this.fgCalc?.get('widthOfBladeSlot')?.value;
     this.newDataForCalc.minWidthOfBladeShank = this.fgCalc?.get('minWidthOfBladeShank')?.value;
     this.newDataForCalc.maxWidthOfBladeShank = this.fgCalc?.get('maxWidthOfBladeShank')?.value;
@@ -103,7 +111,6 @@ export class Calculate implements OnInit{
     this.newDataForCalc.minHeightOfWorkingBladeAtLeadingEdge = this.fgCalc?.get('minHeightOfWorkingBladeAtLeadingEdge')?.value;
     this.newDataForCalc.maxHeightOfWorkingBladeAtTrailingEdge = this.fgCalc?.get('maxHeightOfWorkingBladeAtTrailingEdge')?.value;
     this.newDataForCalc.minHeightOfWorkingBladeAtTrailingEdge = this.fgCalc?.get('minHeightOfWorkingBladeAtTrailingEdge')?.value;
-
   }
 
   onClickCalc(): void {

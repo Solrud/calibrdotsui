@@ -10,7 +10,7 @@
                   formControlName="step"
                   [required]="fcFieldIsRequired('step')">
             @for (step of getStepValueList(); track step.id){
-              <option value="{{ step.value }}">{{ step.name }}  = {{ step.value }} мм. </option>
+              <option value="{{step.name}}">{{ step.name }}  = {{ step.value }} мм. </option>
             }
           </select>
           <button class="btn btn-outline-primary"
@@ -123,6 +123,7 @@
                  [required]="fcFieldIsRequired('maxHeightOfWorkingBladeAtTrailingEdge')">
           <button class="btn btn-outline-primary"
                   type="button"
+                  [disabled]="fgCalc.get('maxHeightOfWorkingBladeAtTrailingEdge')?.disabled"
                   (click)="fcClear('maxHeightOfWorkingBladeAtTrailingEdge')">
             <i class="bi bi-x-lg"></i>
           </button>
@@ -140,6 +141,7 @@
                  [required]="fcFieldIsRequired('minHeightOfWorkingBladeAtTrailingEdge')">
           <button class="btn btn-outline-primary"
                   type="button"
+                  [disabled]="fgCalc.get('minHeightOfWorkingBladeAtTrailingEdge')?.disabled"
                   (click)="fcClear('minHeightOfWorkingBladeAtTrailingEdge')">
             <i class="bi bi-x-lg"></i>
           </button>
